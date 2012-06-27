@@ -6,14 +6,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class SlowService {
 	
-	private SlowRepository repository;
+	private SlowRepository slowRepository;
 	
 	@Cacheable("states")
 	public String lookupState(final String code) {
-		return repository.lookupState(code);
+		return slowRepository.lookupState(code);
 	}
 	
 	public void setRepository(final SlowRepository repository) {
-		this.repository = repository;
+		this.slowRepository = repository;
 	}
 }
